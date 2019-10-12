@@ -1,0 +1,26 @@
+<h1>All items</h1>
+
+<ul>
+    {{ range . }}
+        <li>
+            <a href=/view/{{.}}>
+                {{.}}
+            </a>
+        </li>
+    {{ end }}
+</ul>
+
+<br>
+<hr>
+<div><a id="new" href="">[new item]</a></div>
+
+
+<script>
+    document.getElementById("new").onclick = ev => {
+        ev.preventDefault();
+        let text = window.prompt("Enter Page title","");
+        console.log(text);
+        if (text === "" || text == null) window.alert("Page title can not be blank!");
+        else window.location.href = '/edit/' + text;
+    }
+</script>
