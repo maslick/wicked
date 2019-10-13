@@ -1,10 +1,12 @@
 # =wicked=
 simple HTTP wiki
 
+[![image size](https://img.shields.io/badge/image%20size-3MB-blue.svg)](https://hub.docker.com/r/maslick/wicked)
+
 ## Features
 * written in Go
 * saves wiki entries in files
-* Docker image size ~3Mb
+* Docker image size ~3MB
 
 ## Installation
 ```shell script
