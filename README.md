@@ -4,7 +4,7 @@ simple HTTP wiki
 ## Features
 * written in Go
 * saves wiki entries in files
-* Dockerfile
+* Docker image size ~3Mb
 
 ## Installation
 ```shell script
@@ -12,7 +12,6 @@ git clone https://github.com/maslick/wicked.git
 cd wicked
 go build -ldflags="-s -w" -o wiki
 go build -ldflags="-s -w" -o wiki.zip && upx wiki.zip
-./wiki
 ```
 
 ## Usage
