@@ -8,7 +8,7 @@ simple HTTP wiki
 
 ## Installation
 ```shell script
-git clone
+git clone https://github.com/maslick/wicked.git
 cd wicked
 go build -ldflags="-s -w" -o wiki
 go build -ldflags="-s -w" -o wiki.zip && upx wiki.zip
