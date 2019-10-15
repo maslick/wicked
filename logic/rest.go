@@ -2,6 +2,7 @@ package logic
 
 import (
 	"fmt"
+	"github.com/google/logger"
 	"net/http"
 )
 
@@ -10,6 +11,7 @@ func init() {
 }
 
 func ViewHandler(w http.ResponseWriter, r *http.Request) {
+	logger.Info("view handler")
 	title := r.URL.Path[len("/view/"):]
 	p, err := loadPage(title)
 	if err != nil {
@@ -20,6 +22,7 @@ func ViewHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func EditHandler(w http.ResponseWriter, r *http.Request) {
+	logger.Info("edit handler")
 	title := r.URL.Path[len("/edit/"):]
 	p, err := loadPage(title)
 	if err != nil {
@@ -29,6 +32,7 @@ func EditHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func SaveHandler(w http.ResponseWriter, r *http.Request) {
+	logger.Info("save handler")
 	title := r.URL.Path[len("/save/"):]
 	body := r.FormValue("body")
 	p := &Page{Title: title, Body: []byte(body)}
@@ -41,6 +45,7 @@ func SaveHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func AllHandler(w http.ResponseWriter, r *http.Request) {
+	logger.Info("all handler")
 	err := templates.ExecuteTemplate(w, "items.html", getPageTitles())
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
