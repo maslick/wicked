@@ -30,5 +30,10 @@ docker run -d -p 8081:8080 gowiki
 open http://`docker-machine ip default`:8081
 ```
 
+ ```shell script
+docker run -d -p 8080:8080 maslick/wicked
+open http://`docker-machine ip default`:8080
+```
+
 ## Links
 * [upx](https://upx.github.io/)
